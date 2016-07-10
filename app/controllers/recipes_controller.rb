@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-	before_action :find_recipe, only: [:show, :update, :destroy]
+	before_action :find_recipe, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, except: [:index, :show]
 	def index
 		@recipe = Recipe.all.order("created_at DESC")
@@ -23,7 +23,6 @@ class RecipesController < ApplicationController
 	end
 
 	def edit
-
 	end
 
 	def update
